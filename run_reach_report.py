@@ -27,12 +27,20 @@ def main(client):
   # Initialize a DataDownloader.
   report_downloader = client.GetDataDownloader(version='v202402')
 
-  # Create report job.
+  # gam_lineItem_id = LINE_ITEM_ID
+  # Element zamówienia to zobowiązanie reklamodawcy do zakupu określonej liczby wyświetleń reklamy, kliknięć lub czasu.
+
+    # gam_creative_id = CREATIVE_ID
+    # Reprezentuje media dla wyświetlanej reklamy.
+    # https://support.google.com/admanager/answer/3185155?hl=pl&sjid=2814258854508978251-EU
+
+    # gam_campaign_id = Brak
+
   report_job = {
       'reportQuery': {
-          'dimensions': ['COUNTRY_NAME', 'LINE_ITEM_ID', 'LINE_ITEM_NAME'],
-          'columns': ['UNIQUE_REACH_FREQUENCY', 'UNIQUE_REACH_IMPRESSIONS',
-                      'UNIQUE_REACH'],
+          'dimensions': ['DATE', 'CREATIVE_ID', 'LINE_ITEM_ID', 'LINE_ITEM_NAME'],
+          'columns': ['AD_SERVER_IMPRESSIONS', 'AD_SERVER_CLICKS',
+                      'AD_SERVER_CTR'],
           'dateRangeType': 'REACH_LIFETIME'
       }
   }
