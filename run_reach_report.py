@@ -27,14 +27,14 @@ def main(client):
   # Initialize a DataDownloader.
   report_downloader = client.GetDataDownloader(version='v202402')
 
-  # gam_lineItem_id = LINE_ITEM_ID
-  # Element zamówienia to zobowiązanie reklamodawcy do zakupu określonej liczby wyświetleń reklamy, kliknięć lub czasu.
+    # gam_campaign_id = Brak
 
     # gam_creative_id = CREATIVE_ID
-    # Reprezentuje media dla wyświetlanej reklamy.
+    # Kreacja to reklama wyświetlana użytkownikom na stronie internetowej, w aplikacji lub innym środowisku cyfrowym. Kreacjami mogą być obrazy, filmy, dźwięk i inne materiały, które są wyświetlane użytkownikom.
     # https://support.google.com/admanager/answer/3185155?hl=pl&sjid=2814258854508978251-EU
 
-    # gam_campaign_id = Brak
+    # gam_lineItem_id = LINE_ITEM_ID
+    # Element zamówienia to zobowiązanie reklamodawcy do zakupu określonej liczby wyświetleń reklamy, kliknięć lub czasu.
 
   report_job = {
       'reportQuery': {

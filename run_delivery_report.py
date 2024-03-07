@@ -35,14 +35,14 @@ ORDER_ID = '3411596538'
 def main(client, order_id):
   # Create statement object to filter for an order.
   statement = (ad_manager.StatementBuilder(version='v202402')
-               .Where('ORDER_ID = :id')
-               .WithBindVariable('id', int(order_id))
+               .Where('ORDER_ID = :id') # Ograniczam się do jednego ID
+               .WithBindVariable('id', int(order_id)) # To w jaki sposób biblioteki kliencie wiążą zmienną
                .Limit(None)  # No limit or offset for reports
                .Offset(None))
 
   # Set the start and end dates of the report to run (past 8 days).
   end_date = datetime.now().date()
-  start_date = end_date - timedelta(days=80)
+  start_date = end_date - timedelta(days=8)
 
   # Create report job.
   report_job = {
