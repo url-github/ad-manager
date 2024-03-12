@@ -38,7 +38,7 @@ def main(client):
 
   report_job = {
       'reportQuery': {
-          'dimensions': ['DATE', 'CREATIVE_ID', 'LINE_ITEM_ID', 'LINE_ITEM_NAME'],
+          'dimensions': ['DATE', 'CREATIVE_ID', 'LINE_ITEM_ID', 'CAMPAIGN_ID', 'ORDER_ID', 'ORDER_NAME', 'LINE_ITEM_NAME'],
           'columns': ['AD_SERVER_IMPRESSIONS', 'AD_SERVER_CLICKS',
                       'AD_SERVER_CTR'],
           'dateRangeType': 'REACH_LIFETIME'
@@ -52,9 +52,12 @@ def main(client):
     print('Failed to generate report. Error was: %s' % e)
 
   # Change to your preferred export format.
+  # https://developers.google.com/ad-manager/api/reference/v202308/ReportService.ExportFormat
   export_format = 'CSV_DUMP'
+  # export_format = 'XLSX'
 
   report_file = tempfile.NamedTemporaryFile(suffix='.csv.gz', delete=False)
+  # report_file = tempfile.NamedTemporaryFile(suffix='.xlsx.gz', delete=False)
 
   # Download report data.
   report_downloader.DownloadReportToFile(
