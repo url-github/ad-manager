@@ -14,7 +14,7 @@ def main(client):
 
     report_job = {
         'reportQuery': {
-            'dimensions': ['DATE', 'CREATIVE_ID', 'LINE_ITEM_ID', 'CAMPAIGN_ID', 'ORDER_ID', 'ORDER_NAME', 'LINE_ITEM_NAME'],
+            'dimensions': ['DATE', 'CREATIVE_NAME', 'CREATIVE_ID', 'LINE_ITEM_NAME', 'LINE_ITEM_ID', 'ORDER_ID', 'ORDER_NAME'],
             'columns': ['AD_SERVER_IMPRESSIONS', 'AD_SERVER_CLICKS', 'AD_SERVER_CTR'],
             'dateRangeType': 'YESTERDAY'
         }
