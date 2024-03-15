@@ -14,8 +14,8 @@ def main(client):
 
     report_job = {
         'reportQuery': {
-            'dimensions': ['DATE', 'CREATIVE_NAME', 'CREATIVE_ID', 'LINE_ITEM_NAME', 'LINE_ITEM_ID', 'ORDER_ID', 'ORDER_NAME'],
-            'columns': ['AD_SERVER_IMPRESSIONS', 'AD_SERVER_CLICKS', 'AD_SERVER_CTR'],
+            'dimensions': ['DATE', 'DEVICE_CATEGORY_NAME', 'CREATIVE_NAME', 'CREATIVE_ID', 'LINE_ITEM_NAME', 'LINE_ITEM_ID', 'LINE_ITEM_TYPE', 'ORDER_ID', 'ORDER_NAME'],
+            'columns': ['AD_SERVER_IMPRESSIONS', 'AD_SERVER_CLICKS', 'AD_SERVER_CTR', 'AD_SERVER_CPM_AND_CPC_REVENUE', 'AD_SERVER_ALL_REVENUE', 'AD_SERVER_WITHOUT_CPD_AVERAGE_ECPM', 'TOTAL_LINE_ITEM_LEVEL_ALL_REVENUE', 'AD_EXCHANGE_COST_PER_CLICK'],
             'dateRangeType': 'YESTERDAY'
         }
     }
